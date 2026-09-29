@@ -8,29 +8,33 @@ export const UPI_PARAMS = {
   mc: "0000",
   mode: "02",
   purpose: "00",
+  sign:
+    "MEUCIASTyzrx4IX6vWYQXbGReO4s9npTPP8EaHf10s5yMlUxAiEAlIYK9AqlIFPL7bgSUTReLPOKV8z0irxd/zDSAfolxC0=",
 } as const;
 
-export function buildUpiIntent(extra: Partial<Record<keyof typeof UPI_PARAMS, string>> = {}): string {
-  const merged = { ...UPI_PARAMS, ...extra };
-  const qs = new URLSearchParams(merged as Record<string, string>).toString();
-  return `upi://pay?${qs}`;
-}
-
-// Apps that have a working custom URI scheme on Android.
-// PhonePe publishes a stable phonepe://upi/pay scheme that reliably opens the app.
-// GPay's tez:// and Paytm's paytmmp:// schemes are unreliable in modern Android
-// (often silently fail or get blocked), so we use the bare upi:// intent which
-// routes through the system UPI resolver sheet — works reliably.
 export type UpiApp = "gpay" | "phonepe" | "paytm" | "other";
 
+// Build the base UPI intent with ONLY spaces percent-encoded as %20.
+// Spec note: the Garur QR uses raw @, raw /, and raw = in the sign.
+// URLSearchParams would over-encode these, so we assemble manually.
+export function buildUpiIntent(extra: Partial<Record<keyof typeof UPI_PARAMS, string>> = {}): string {
+  const merged = { ...UPI_PARAMS, ...extra };
+  const parts = Object.entries(merged).map(
+    ([k, v]) => `${k}=${String(v).replace(/ /g, "%20")}`
+  );
+  return `upi://pay?${parts.join("&")}`;
+}
+
+// Build the custom-scheme deep link for each UPI app.
+// GPay uses gpay://upi/pay?..., PhonePe uses phonepe://pay?...,
+// Paytm uses paytmmp://pay?..., and "other" falls back to the bare upi:// intent.
+const SCHEMES: Record<UpiApp, (intent: string) => string> = {
+  gpay: (i) => i.replace(/^upi:\/\//, "gpay://upi/"),
+  phonepe: (i) => i.replace(/^upi:\/\//, "phonepe://"),
+  paytm: (i) => i.replace(/^upi:\/\//, "paytmmp://"),
+  other: (i) => i,
+};
+
 export function buildAppIntent(app: UpiApp): string {
-  const base = buildUpiIntent();
-  switch (app) {
-    case "phonepe":
-      return base.replace(/^upi:\/\//, "phonepe://upi/");
-    case "gpay":
-    case "paytm":
-    case "other":
-      return base;
-  }
+  return SCHEMES[app](buildUpiIntent());
 }
