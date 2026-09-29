@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-orange: #f08c28;
+  --brand-navy: #001478;
+  --brand-green: #3c7800;
+  --brand-cream: #faf6ec;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--brand-cream);
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .container-page {
+    @apply max-w-6xl mx-auto px-5 sm:px-8;
+  }
+  .heading-display {
+    @apply font-display tracking-tight;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-brand-orange text-white font-semibold shadow-md hover:brightness-110 transition;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 border-brand-navy text-brand-navy font-semibold hover:bg-brand-navy hover:text-white transition;
+  }
+  .section {
+    @apply py-20 sm:py-24;
+  }
+  .card {
+    @apply rounded-2xl bg-white border border-black/5 shadow-sm p-7;
+  }
+}
+
+/* Subtle decorative pattern for sections */
+.bg-leaf {
+  background-image: radial-gradient(circle at 20% 30%, rgba(63, 123, 90, 0.06) 0, transparent 35%),
+    radial-gradient(circle at 80% 70%, rgba(240, 140, 40, 0.08) 0, transparent 40%);
+}
