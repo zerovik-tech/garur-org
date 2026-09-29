@@ -9,7 +9,7 @@ const focusAreas = [
   },
   {
     title: "Education",
-    body: "Spaces like the Garur Civil Library at Dhaina Lakhani Chauraha give students a quiet, free place to read, study and grow.",
+    body: "Spaces like the Garur Civil Library at Dilli Darbar Palace, Darshani Garur, give students a quiet, free place to read, study and grow.",
     icon: "📚",
   },
   {
@@ -19,15 +19,20 @@ const focusAreas = [
   },
   {
     title: "Health",
-    body: "Connecting families in remote hill villages with preventive care, sanitation and maternal-child health resources.",
+    body: "Connecting families in remote hill villages with preventive care, sanitation, maternal-child health resources — through Free Medical Camps held from time to time.",
     icon: "🩺",
+  },
+  {
+    title: "Migrant Connection",
+    body: "A bridge for people who have gone out to seek work in other states — keeping them connected to their parents, family and roots in the remote Himalayan hills of Uttarakhand.",
+    icon: "🤝",
   },
 ];
 
 const milestones = [
-  { year: "Founding", label: "Established in Garur, Bageshwar district, Uttarakhand" },
-  { year: "Library", label: "Garur Civil Library opened at Dhaina Lakhani Chauraha" },
-  { year: "Mission21", label: "Convenor of #Mission21 — an addiction-free society movement" },
+  { year: "14 April 2016", label: "Garur Civil Society founded and office inaugurated by social worker Radha Behen in Garur, Bageshwar" },
+  { year: "Library", label: "Garur Civil Library opened at Dilli Darbar Palace, Darshani Garur" },
+  { year: "#Mission21", label: "Convenor of #Mission21 — a Vyasan Mukt (addiction-free) movement for the 21st century" },
 ];
 
 export default function HomePage() {
@@ -38,7 +43,7 @@ export default function HomePage() {
         <div className="container-page pt-16 pb-20 sm:pt-24 sm:pb-28 grid md:grid-cols-2 gap-12 items-center">
           <div>
             <span className="inline-block px-3 py-1 rounded-full bg-brand-green/10 text-brand-green text-xs font-semibold tracking-wide uppercase">
-              Garur · Bageshwar · Uttarakhand
+              Garur · Bageshwar · Uttarakhand · Since 2016
             </span>
             <h1 className="heading-display mt-5 text-4xl sm:text-5xl md:text-6xl font-bold text-brand-navy leading-[1.05]">
               Garur Civil Society
@@ -47,9 +52,10 @@ export default function HomePage() {
               A grassroots non-profit working on{" "}
               <span className="text-brand-orange font-semibold">legal aid</span>,{" "}
               <span className="text-brand-orange font-semibold">education</span>,{" "}
-              <span className="text-brand-orange font-semibold">public awareness</span> and{" "}
-              <span className="text-brand-orange font-semibold">health</span> in the Himalayan
-              hills of Uttarakhand.
+              <span className="text-brand-orange font-semibold">public awareness</span>,{" "}
+              <span className="text-brand-orange font-semibold">health</span> and{" "}
+              <span className="text-brand-orange font-semibold">migrant connection</span>{" "}
+              in the hill district of Uttarakhand.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#donate" className="btn-primary">
@@ -61,13 +67,13 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex justify-center">
-            <div className="relative w-72 h-72 sm:w-96 sm:h-96 rounded-3xl bg-white shadow-xl border border-black/5 flex items-center justify-center p-6">
+            <div className="relative w-full max-w-md rounded-3xl bg-white shadow-xl border border-black/5 flex items-center justify-center p-6">
               <Image
-                src="/logo.jpg"
-                alt="Garur Civil Society official logo"
-                width={400}
-                height={400}
-                className="object-contain w-full h-full"
+                src="/logo-horizontal.jpg"
+                alt="Garur Civil Society — Connecting Family to Home"
+                width={1280}
+                height={426}
+                className="object-contain w-full h-auto"
                 priority
               />
             </div>
@@ -86,42 +92,82 @@ export default function HomePage() {
           </div>
           <div className="md:col-span-2 space-y-5 text-neutral-700 text-lg leading-relaxed">
             <p>
-              Garur Civil Society was founded to serve the people of the Garur valley in Bageshwar
-              district. We work where the state reaches late — supporting families, students and
-              workers with the resources and rights they are entitled to.
+              Garur Civil Society was founded in 2016 to serve the people of the Garur
+              valley in Bageshwar, a hill district of Uttarakhand. We work where the
+              state reaches late — supporting families, students and workers with the
+              resources and rights they are entitled to.
             </p>
             <p>
-              Our work is rooted in the belief that <strong>civil society</strong> is the
-              connective tissue of a healthy democracy. From a quiet reading room in Dhaina
-              Lakhani to legal-aid clinics for those who cannot afford a lawyer, every programme
-              is built with and for the community.
+              Our work is rooted in the belief that{" "}
+              <strong>civil society</strong> is the connective tissue of a healthy
+              democracy. From a quiet reading room at Dilli Darbar Palace, Darshani
+              Garur, to legal-aid clinics for those who cannot afford a lawyer, every
+              programme is built with and for the community.
             </p>
             <p>
-              Through <span className="font-semibold text-brand-green">#Mission21</span>, our
-              founder also convenes an addiction-free society movement — because the freedom to
-              learn and work begins with the freedom from addiction.
+              Through{" "}
+              <span className="font-semibold text-brand-green">#Mission21</span>, our
+              founder also convenes a public movement for a Vyasan Mukt
+              (addiction-free) Twenty-First Century — because the freedom to learn
+              and work begins with the freedom from addiction.
             </p>
           </div>
         </div>
       </section>
 
+      {/* LIBRARY IN ACTION */}
+      <section className="section bg-leaf">
+        <div className="container-page grid md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <span className="text-xs font-semibold tracking-wide uppercase text-brand-green">
+              Garur Civil Library
+            </span>
+            <h2 className="heading-display mt-2 text-3xl sm:text-4xl font-bold text-brand-navy">
+              A quiet room where hills learn to read
+            </h2>
+            <div className="mt-3 h-1 w-16 bg-brand-orange rounded-full" />
+            <p className="mt-6 text-lg text-neutral-700 leading-relaxed">
+              Run by Garur Civil Society at Dilli Darbar Palace, Darshani Garur, the
+              library is a free reading and study space for students from the Garur
+              valley — open every day, Wi-Fi enabled, and open to all girls and to
+              underprivileged boys without charge.
+            </p>
+            <p className="mt-4 text-lg text-neutral-700 leading-relaxed">
+              For many students here, it is the only quiet place to study after
+              school — and a doorway to national-level competitive exams.
+            </p>
+          </div>
+          <div className="order-1 md:order-2">
+            <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-black/5 bg-white">
+              <Image
+                src="/library-kids.jpg"
+                alt="Students reading at the Garur Civil Library"
+                width={1600}
+                height={900}
+                className="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FOCUS AREAS */}
-      <section id="focus" className="section bg-leaf">
+      <section id="focus" className="section bg-white">
         <div className="container-page">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="heading-display text-3xl sm:text-4xl font-bold text-brand-navy">
               What We Do
             </h2>
             <p className="mt-3 text-neutral-700">
-              Four pillars of work, grounded in the day-to-day realities of mountain life.
+              Five pillars of work, grounded in the day-to-day realities of mountain life.
             </p>
           </div>
-          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {focusAreas.map((a) => (
               <div key={a.title} className="card hover:-translate-y-1 transition-transform">
                 <div className="text-3xl">{a.icon}</div>
                 <h3 className="mt-4 text-xl font-semibold text-brand-navy">{a.title}</h3>
-                <p className="mt-2 text-neutral-600 leading-relaxed">{a.body}</p>
+                <p className="mt-2 text-neutral-600 leading-relaxed text-[15px]">{a.body}</p>
               </div>
             ))}
           </div>
@@ -129,23 +175,39 @@ export default function HomePage() {
       </section>
 
       {/* JOURNEY / MILESTONES */}
-      <section className="section bg-white">
-        <div className="container-page">
-          <h2 className="heading-display text-3xl sm:text-4xl font-bold text-brand-navy text-center">
-            Our Journey
-          </h2>
-          <div className="mt-3 h-1 w-16 bg-brand-orange rounded-full mx-auto" />
-          <ol className="mt-12 max-w-3xl mx-auto border-l-2 border-brand-orange/40 pl-8 space-y-10">
-            {milestones.map((m, i) => (
-              <li key={i} className="relative">
-                <span className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-brand-orange border-4 border-white shadow" />
-                <div className="text-sm font-semibold text-brand-orange uppercase tracking-wider">
-                  {m.year}
-                </div>
-                <div className="mt-1 text-lg text-neutral-800">{m.label}</div>
-              </li>
-            ))}
-          </ol>
+      <section className="section bg-white border-t border-black/5">
+        <div className="container-page grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h2 className="heading-display text-3xl sm:text-4xl font-bold text-brand-navy">
+              Our Journey
+            </h2>
+            <div className="mt-3 h-1 w-16 bg-brand-orange rounded-full" />
+            <ol className="mt-10 border-l-2 border-brand-orange/40 pl-8 space-y-10">
+              {milestones.map((m, i) => (
+                <li key={i} className="relative">
+                  <span className="absolute -left-[41px] top-1 w-5 h-5 rounded-full bg-brand-orange border-4 border-white shadow" />
+                  <div className="text-sm font-semibold text-brand-orange uppercase tracking-wider">
+                    {m.year}
+                  </div>
+                  <div className="mt-1 text-lg text-neutral-800">{m.label}</div>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <div className="md:pt-2">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl border border-black/5 bg-white">
+              <Image
+                src="/library-inauguration.jpg"
+                alt="Inauguration of Garur Civil Society on 14 April 2016 by social worker Radha Behen, with founder D.K. Joshi"
+                width={1411}
+                height={1411}
+                className="object-cover w-full h-full"
+              />
+            </div>
+            <p className="mt-3 text-center text-sm text-neutral-600 italic">
+              14 April 2016 — the day Garur Civil Society was inaugurated.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -168,9 +230,11 @@ export default function HomePage() {
               Advocate, High Court of Uttarakhand
             </p>
             <p className="mt-5 text-lg text-neutral-700 leading-relaxed">
-              Advocate D.K. Joshi founded Garur Civil Society to channel a lifetime of legal
-              practice into direct community service. As Convenor of <strong>#Mission21</strong>,
-              he also leads an addiction-free society movement in the region.
+              Advocate D.K. Joshi founded Garur Civil Society on 14 April 2016 to
+              channel a lifetime of legal practice into direct community service.
+              As Convenor of <strong>#Mission21</strong>, he also leads a public
+              movement for a Vyasan Mukt (addiction-free) Twenty-First Century in
+              the region.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a
@@ -199,6 +263,23 @@ export default function HomePage() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Library inauguration photo — quiet visual proof */}
+        <div className="container-page mt-16">
+          <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden shadow-xl border border-black/5 bg-white max-w-4xl mx-auto">
+            <Image
+              src="/student-medals.jpg"
+              alt="D.K. Joshi with a Garur Civil Library student who won national medals"
+              width={1200}
+              height={1600}
+              className="object-cover w-full h-full"
+            />
+          </div>
+          <p className="mt-4 text-center text-sm text-neutral-600 italic max-w-2xl mx-auto">
+            From a quiet reading room in Dilli Darbar Palace to national-level
+            medals — the library's reach, one student at a time.
+          </p>
         </div>
       </section>
 
@@ -247,14 +328,14 @@ export default function HomePage() {
             <Image
               src="/logo.jpg"
               alt="Garur Civil Society"
-              width={40}
-              height={40}
+              width={48}
+              height={48}
               className="rounded-md"
             />
             <div>
               <div className="font-semibold text-brand-navy">Garur Civil Society</div>
               <div className="text-xs text-neutral-500">
-                Garur, Bageshwar, Uttarakhand · #Mission21
+                Garur, Bageshwar, Uttarakhand · #Mission21 · Since 2016
               </div>
             </div>
           </div>
