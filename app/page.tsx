@@ -1,7 +1,5 @@
 import Image from "next/image";
-
-const UPI_PAY_LINK =
-  "upi://pay?pa=QR919319805337-6623@unionbankofindia&pn=GARUR%20CIVIL%20SOCIETY&cu=INR&tr=FINACLE_QRCODE&mc=0000&mode=02&purpose=00";
+import DonateModal from "@/components/DonateModal";
 
 const focusAreas = [
   {
@@ -217,9 +215,7 @@ export default function HomePage() {
               directly.
             </p>
             <div className="mt-7">
-              <a href={UPI_PAY_LINK} className="btn-primary text-lg">
-                Tap to Donate via UPI
-              </a>
+              <DonateModal />
             </div>
             <p className="mt-4 text-white/60 text-sm">
               UPI ID: <code className="text-white/90">QR919319805337-6623@unionbankofindia</code>
