@@ -1,5 +1,4 @@
 import Image from "next/image";
-import DonateModal from "@/components/DonateModal";
 
 const focusAreas = [
   {
@@ -292,13 +291,9 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 text-white/85 text-lg leading-relaxed">
               Every contribution helps us run the library, offer free legal aid and reach more
-              families in the hills. Scan the QR with any UPI app or tap the button to donate
-              directly.
+              families in the hills. Scan the QR with any UPI app to donate directly.
             </p>
-            <div className="mt-7">
-              <DonateModal />
-            </div>
-            <p className="mt-4 text-white/60 text-sm">
+            <p className="mt-6 text-white/60 text-sm">
               UPI ID: <code className="text-white/90">QR919319805337-6623@unionbankofindia</code>
               <br />
               Payee: <span className="text-white/90">Garur Civil Society</span>
