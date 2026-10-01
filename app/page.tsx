@@ -63,6 +63,9 @@ export default function HomePage() {
               <a href="#about" className="btn-ghost">
                 Learn More
               </a>
+              <a href="/gallery" className="btn-ghost">
+                View Gallery →
+              </a>
             </div>
           </div>
           <div className="flex justify-center">
