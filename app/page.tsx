@@ -88,6 +88,15 @@ export default function HomePage() {
               About Us
             </h2>
             <div className="mt-3 h-1 w-16 bg-brand-orange rounded-full" />
+            <div className="mt-8 hidden md:block">
+              <Image
+                src="/team-banner.jpg"
+                alt="Garur Civil Society team — कोसानी-गरुड़ मार्ग, गरुड़, जिला बागेश्वर"
+                width={1280}
+                height={644}
+                className="rounded-2xl border border-black/5 shadow-md w-full h-auto"
+              />
+            </div>
           </div>
           <div className="md:col-span-2 space-y-5 text-neutral-700 text-lg leading-relaxed">
             <p>
@@ -139,8 +148,8 @@ export default function HomePage() {
           <div className="order-1 md:order-2">
             <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border border-black/5 bg-white">
               <Image
-                src="/library-kids.jpg"
-                alt="Students reading at the Garur Civil Library"
+                src="/library-book-donation.jpg"
+                alt="Book donation at the Garur Civil Library"
                 width={1600}
                 height={900}
                 className="object-cover w-full h-full"
@@ -214,8 +223,14 @@ export default function HomePage() {
       <section id="founder" className="section bg-leaf">
         <div className="container-page grid md:grid-cols-3 gap-10 items-center">
           <div className="md:col-span-1 flex justify-center">
-            <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full bg-white shadow-xl border border-black/5 flex items-center justify-center">
-              <span className="text-6xl">👤</span>
+            <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden shadow-xl border border-black/5 bg-white">
+              <Image
+                src="/founder-dp.jpg"
+                alt="D.K. Joshi, Founder of Garur Civil Society"
+                width={800}
+                height={800}
+                className="object-cover w-full h-full"
+              />
             </div>
           </div>
           <div className="md:col-span-2">
@@ -264,20 +279,20 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Library inauguration photo — quiet visual proof */}
+        {/* Team photo — the people behind Garur Civil Society */}
         <div className="container-page mt-16">
           <div className="relative aspect-[16/9] sm:aspect-[21/9] rounded-3xl overflow-hidden shadow-xl border border-black/5 bg-white max-w-4xl mx-auto">
             <Image
-              src="/student-medals.jpg"
-              alt="D.K. Joshi with a Garur Civil Library student who won national medals"
-              width={1200}
-              height={1600}
+              src="/team-photo.jpg"
+              alt="The team of Garur Civil Society"
+              width={960}
+              height={686}
               className="object-cover w-full h-full"
             />
           </div>
           <p className="mt-4 text-center text-sm text-neutral-600 italic max-w-2xl mx-auto">
-            From a quiet reading room in Dilli Darbar Palace to national-level
-            medals — the library's reach, one student at a time.
+            The people behind Garur Civil Society — advocates, librarians and
+            volunteers from the Garur valley.
           </p>
         </div>
       </section>
